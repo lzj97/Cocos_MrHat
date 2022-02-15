@@ -21,7 +21,7 @@ export default class NewClass extends cc.Component {
   @property(cc.Button)
   jumpBtn: cc.Button = null;
 
-  @property(Number)
+  @property(cc.Integer)
   speed: number = 20;
 
   @property({
