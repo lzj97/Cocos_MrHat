@@ -9,18 +9,17 @@ const { ccclass, property } = cc._decorator;
 
 @ccclass
 export default class NewClass extends cc.Component {
-  @property(cc.Sprite)
-  player: cc.Sprite = null;
-
-  // LIFE-CYCLE CALLBACKS:
-
   onLoad() {
-    cc.director.getPhysicsManager().enabled = true;
-    cc.director.getCollisionManager().enabled = true;
-    cc.director.getCollisionManager().enabledDrawBoundingBox = true;
+    this.node.on(
+      cc.Node.EventType.TOUCH_END,
+      () => {
+        cc.director.loadScene("Game1");
+      },
+      this
+    );
   }
 
   start() {}
 
-  update(dt) {}
+  // update (dt) {}
 }

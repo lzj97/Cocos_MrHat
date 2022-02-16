@@ -9,18 +9,20 @@ const { ccclass, property } = cc._decorator;
 
 @ccclass
 export default class NewClass extends cc.Component {
-  @property(cc.Sprite)
-  player: cc.Sprite = null;
+  @property(cc.Label)
+  label: cc.Label = null;
+
+  @property
+  text: string = "hello";
 
   // LIFE-CYCLE CALLBACKS:
 
-  onLoad() {
-    cc.director.getPhysicsManager().enabled = true;
-    cc.director.getCollisionManager().enabled = true;
-    cc.director.getCollisionManager().enabledDrawBoundingBox = true;
-  }
+  // onLoad () {}
 
   start() {}
-
-  update(dt) {}
+  onBeginContact(contact, selfCollider, otherCollider) {
+    if (otherCollider.node?.group === "Player") {
+      cc.director.loadScene("Game1");
+    }
+  }
 }

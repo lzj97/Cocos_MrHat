@@ -1,15 +1,33 @@
 {
   "group-list": [
     "default",
-    "UI"
+    "UI",
+    "Player",
+    "Hidden"
   ],
   "collision-matrix": [
     [
+      false,
+      null,
       true
     ],
     [
       false,
+      false,
+      null,
       false
+    ],
+    [
+      true,
+      false,
+      false,
+      false
+    ],
+    [
+      false,
+      false,
+      false,
+      true
     ]
   ],
   "excluded-modules": [

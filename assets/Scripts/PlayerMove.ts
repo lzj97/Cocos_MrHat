@@ -24,6 +24,12 @@ export default class NewClass extends cc.Component {
   @property(cc.Integer)
   speed: number = 20;
 
+  @property(cc.Integer)
+  jumpSpeed: number = 800;
+
+  @property(Boolean)
+  ContinuousJump: boolean = true;
+
   @property({
     visible: false,
   })
@@ -68,6 +74,28 @@ export default class NewClass extends cc.Component {
       this
     );
     this.jumpBtn.node.on(cc.Node.EventType.TOUCH_START, this.jumpAction, this);
+
+    cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.onKeyDown, this);
+    cc.systemEvent.on(cc.SystemEvent.EventType.KEY_UP, this.onKeyUp, this);
+  }
+  onKeyDown(event) {
+    if (event.keyCode === 65) {
+      this.leftLongPress = true;
+    }
+    if (event.keyCode === 68) {
+      this.rightLongPress = true;
+    }
+    if (event.keyCode === 32) {
+      this.jumpAction();
+    }
+  }
+  onKeyUp(event) {
+    if (event.keyCode === 65) {
+      this.leftLongPress = false;
+    }
+    if (event.keyCode === 68) {
+      this.rightLongPress = false;
+    }
   }
 
   start() {
@@ -88,7 +116,11 @@ export default class NewClass extends cc.Component {
 
   jumpAction() {
     const v = this.rigidbody.linearVelocity;
-    v.y = 800;
+
+    if (!this.ContinuousJump && v.y !== 0) {
+      return;
+    }
+    v.y = this.jumpSpeed;
     this.rigidbody.linearVelocity = v;
   }
 }

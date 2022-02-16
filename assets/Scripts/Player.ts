@@ -9,23 +9,14 @@ const { ccclass, property } = cc._decorator;
 
 @ccclass
 export default class NewClass extends cc.Component {
-  @property(cc.Label)
-  label: cc.Label = null;
-
-  @property
-  text: string = "hello";
-
-  @property
-  speed: number = 20;
-
   start() {}
 
   update(dt) {}
 
-  moveLeft(): void {
-    this.node.x -= this.speed;
-  }
-  moveRight(): void {
-    this.node.x += this.speed;
-  }
+  // onCollisionEnter(other, self) {
+  //   console.log(other);
+  // }
+  // onBeginContact() {
+  //   console.log("onBeginContact");
+  // }
 }
