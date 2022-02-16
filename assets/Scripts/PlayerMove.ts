@@ -27,7 +27,7 @@ export default class NewClass extends cc.Component {
   @property(cc.Integer)
   jumpSpeed: number = 800;
 
-  @property(Boolean)
+  @property(cc.Boolean)
   ContinuousJump: boolean = true;
 
   @property({
