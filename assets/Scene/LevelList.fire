@@ -1088,10 +1088,10 @@
       "__id__": 2
     },
     "_enabled": true,
-    "signPrefab": {
+    "SignPrefab": {
       "__uuid__": "fefca3b3-27e7-44e3-98a3-278dfdad0d24"
     },
-    "pagination": {
+    "Pagination": {
       "__id__": 10
     },
     "count": 22,

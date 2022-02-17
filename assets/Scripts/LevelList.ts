@@ -19,6 +19,8 @@ export default class NewClass extends cc.Component {
   rowCount: number = 2;
   columnCount: number = 5;
 
+  passedCound: number = 0;
+
   protected onLoad(): void {
     this.ListBox = this.node.getChildByName("ListBox");
 
@@ -40,10 +42,18 @@ export default class NewClass extends cc.Component {
       }
     }
 
-    indexArr.forEach((text, index) => {
+    indexArr.forEach((text: number, index: number) => {
       const sign = cc.instantiate(this.SignPrefab);
       sign.parent = this.ListBox;
-      sign.getChildByName("Text").getComponent(cc.Label).string = text + "";
+
+      const Text = sign.getChildByName("Text");
+
+      if (this.passedCound + 1 < text) {
+        Text.active = false;
+        sign.getChildByName("Lock").active = true;
+      } else {
+        Text.getComponent(cc.Label).string = String(text);
+      }
       const intervalX = (this.ListBox.width - this.columnCount * sign.width) / 4;
       const intervalY = this.ListBox.height - this.rowCount * sign.height;
 

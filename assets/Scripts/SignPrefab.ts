@@ -1,5 +1,6 @@
 const { ccclass, property } = cc._decorator;
 
+import Toast from "./utils/Toast";
 @ccclass
 export default class NewClass extends cc.Component {
   protected onLoad(): void {
@@ -9,8 +10,13 @@ export default class NewClass extends cc.Component {
   start() {}
 
   startPlay() {
-    const index = this.node.getChildByName("Text")?.getComponent(cc.Label)?.string;
+    const Text = this.node.getChildByName("Text");
 
-    cc.director.loadScene("Game" + index);
+    if (!Text.activeInHierarchy) {
+      Toast("关卡尚未开启");
+      return;
+    }
+
+    cc.director.loadScene("Game" + Text.getComponent(cc.Label)?.string);
   }
 }
