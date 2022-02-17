@@ -334,8 +334,8 @@
     "_skewX": 0,
     "_skewY": 0,
     "_is3DNode": false,
-    "_groupIndex": 0,
-    "groupIndex": 0,
+    "_groupIndex": 2,
+    "groupIndex": 2,
     "_id": "3cFxFmwDVEQI7KvOjV5RLX"
   },
   {
@@ -1359,7 +1359,7 @@
       "__id__": 27
     },
     "_enabled": true,
-    "_cullingMask": -2,
+    "_cullingMask": -14,
     "_clearFlags": 6,
     "_backgroundColor": {
       "__type__": "cc.Color",
@@ -2061,7 +2061,7 @@
     },
     "_angularVelocity": 0,
     "_fixedRotation": false,
-    "enabledContactListener": false,
+    "enabledContactListener": true,
     "bullet": false,
     "awakeOnLoad": true,
     "_id": "5fUsILpotNxoV9VGhykjhM"
