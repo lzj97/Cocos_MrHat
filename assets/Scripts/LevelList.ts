@@ -5,9 +5,6 @@ export default class NewClass extends cc.Component {
   @property(cc.Prefab)
   SignPrefab: cc.Prefab = null;
 
-  @property(cc.Node)
-  Pagination: cc.Node = null;
-
   @property(cc.Integer)
   count: number = 22;
 
@@ -15,6 +12,8 @@ export default class NewClass extends cc.Component {
   page: number = 2;
 
   ListBox: cc.Node = null;
+  Pagination: cc.Node = null;
+
   pageSize: number = 10;
   rowCount: number = 2;
   columnCount: number = 5;
@@ -23,11 +22,14 @@ export default class NewClass extends cc.Component {
 
   protected onLoad(): void {
     this.ListBox = this.node.getChildByName("ListBox");
+    this.Pagination = this.node.getChildByName("Pagination");
 
     const Prev = this.Pagination.getChildByName("Prev");
     const Next = this.Pagination.getChildByName("Next");
     Prev.on(cc.Node.EventType.TOUCH_END, () => this.changePage(this.page - 1), this);
     Next.on(cc.Node.EventType.TOUCH_END, () => this.changePage(this.page + 1), this);
+
+    this.node.getChildByName("Home").on(cc.Node.EventType.TOUCH_END, this.goHome, this);
   }
 
   start() {
@@ -77,5 +79,9 @@ export default class NewClass extends cc.Component {
     });
     this.page = p;
     this.renderList();
+  }
+
+  goHome() {
+    cc.director.loadScene("Start");
   }
 }
