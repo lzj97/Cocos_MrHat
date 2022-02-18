@@ -22,7 +22,7 @@ export default class NewClass extends cc.Component {
   start() {}
   onBeginContact(contact, selfCollider, otherCollider) {
     if (otherCollider.node?.group === "Player") {
-      cc.director.loadScene("Game1");
+      cc.director.loadScene("Level1");
     }
   }
 }

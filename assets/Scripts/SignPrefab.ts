@@ -17,6 +17,6 @@ export default class NewClass extends cc.Component {
       return;
     }
 
-    cc.director.loadScene("Game" + Text.getComponent(cc.Label)?.string);
+    cc.director.loadScene("Level" + Text.getComponent(cc.Label)?.string);
   }
 }
