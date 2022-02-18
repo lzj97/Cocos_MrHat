@@ -101,8 +101,8 @@ export default class NewClass extends cc.Component {
     const PauseOptions = this.node.getChildByName("PauseOptions");
     PauseOptions.active = true;
   }
-  goHome() {
-    cc.director.loadScene("Start");
+  goMain() {
+    cc.director.loadScene("Main");
   }
   play() {
     const PauseOptions = this.node.getChildByName("PauseOptions");

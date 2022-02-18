@@ -76,8 +76,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        0,
-        0,
+        480,
+        320,
         0,
         0,
         0,
@@ -2573,7 +2573,7 @@
     },
     "component": "",
     "_componentId": "c2b74/ydWVGnLOvLMkz7f28",
-    "handler": "goHome",
+    "handler": "goMain",
     "customEventData": ""
   },
   {
@@ -3659,14 +3659,6 @@
     "speed": 200,
     "jumpSpeed": 800,
     "ContinuousJump": true,
-    "Mute": false,
-    "Volume": 1,
-    "JumpAudio": {
-      "__uuid__": "69514c6f-a03d-44d2-81f7-9387287a3ff7"
-    },
-    "BackgroundAudio": {
-      "__uuid__": "9269c463-9ee6-4bf0-9ec2-2945e5c96d0e"
-    },
     "_id": ""
   },
   {

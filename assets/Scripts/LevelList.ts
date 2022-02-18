@@ -29,7 +29,7 @@ export default class NewClass extends cc.Component {
     Prev.on(cc.Node.EventType.TOUCH_END, () => this.changePage(this.page - 1), this);
     Next.on(cc.Node.EventType.TOUCH_END, () => this.changePage(this.page + 1), this);
 
-    this.node.getChildByName("Home").on(cc.Node.EventType.TOUCH_END, this.goHome, this);
+    this.node.getChildByName("Home").on(cc.Node.EventType.TOUCH_END, this.goMain, this);
   }
 
   start() {
@@ -81,7 +81,7 @@ export default class NewClass extends cc.Component {
     this.renderList();
   }
 
-  goHome() {
-    cc.director.loadScene("Start");
+  goMain() {
+    cc.director.loadScene("Main");
   }
 }
