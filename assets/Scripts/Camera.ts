@@ -35,14 +35,20 @@ export default class NewClass extends cc.Component {
   update(dt) {
     if (!this.target) return;
     var c_pos = this.convertToRootSpaceAR(this.target);
-    if (c_pos.x < this.mapLeft + this.mainWidth / 2) {
-      this.node.x = this.mapLeft + this.mainWidth / 2;
+
+    const leftBorder = this.mapLeft + this.mainWidth / 2;
+    const rightBorder = this.mapLeft + this.mapWidth - this.mainWidth / 2;
+
+    const lerpRatio = 0.9;
+    if (c_pos.x < leftBorder) {
+      this.node.x = cc.misc.lerp(leftBorder, this.node.x, lerpRatio);
       return;
-    } else if (c_pos.x > this.mapLeft + this.mapWidth - this.mainWidth / 2) {
-      this.node.x = this.mapLeft + this.mapWidth - this.mainWidth / 2;
+    } else if (c_pos.x > rightBorder) {
+      this.node.x = cc.misc.lerp(rightBorder, this.node.x, lerpRatio);
+
       return;
     }
-    this.node.x = c_pos.x;
+    this.node.x = cc.misc.lerp(c_pos.x, this.node.x, lerpRatio);
   }
   convertToRootSpaceAR(node: cc.Node, nodePoint?: cc.Vec2): cc.Vec2 {
     // 将节点坐标系下的一个点转换到世界空间坐标系
