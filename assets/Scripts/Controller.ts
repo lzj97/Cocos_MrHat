@@ -1,5 +1,7 @@
-const { ccclass, property } = cc._decorator;
+import global from "./utils/global";
+import GlobalAudio from "./GlobalAudio";
 
+const { ccclass, property } = cc._decorator;
 @ccclass
 export default class NewClass extends cc.Component {
   @property(cc.Integer)
@@ -12,12 +14,23 @@ export default class NewClass extends cc.Component {
   ContinuousJump: boolean = true;
 
   Player: cc.Node = null;
+  GlobalAudio: GlobalAudio = null;
+
   leftLongPress: boolean = false;
   rightLongPress: boolean = false;
   rigidbody: cc.RigidBody = null;
 
   onLoad() {
     this.Player = cc.find("Canvas/Player");
+
+    this.GlobalAudio = cc.director
+      .getScene()
+      .getChildByName("GlobalAudio")
+      .getComponent("GlobalAudio");
+
+    if (JSON.parse(cc.sys.localStorage.getItem(global.MUTE))) {
+      this.mute();
+    }
 
     const Left = this.node.getChildByName("Left");
     Left.on(cc.Node.EventType.TOUCH_START, () => (this.leftLongPress = true), this);
@@ -71,18 +84,17 @@ export default class NewClass extends cc.Component {
 
   jumpAction() {
     const v = this.rigidbody.linearVelocity;
-
     if (!this.ContinuousJump && v.y !== 0) {
       return;
     }
     v.y = this.jumpSpeed;
     this.rigidbody.linearVelocity = v;
+    this.GlobalAudio.playPlayerJumpEffect();
   }
 
   help() {}
   reload() {
     const sceneName = cc.director.getScene()?.name;
-    // const index = sceneName.charAt(sceneName.length - 1);
     cc.director.loadScene(sceneName);
   }
   pause() {
@@ -101,11 +113,13 @@ export default class NewClass extends cc.Component {
     Phonation.active = false;
     const Mute = cc.find("Canvas/UI/PauseOptions/Mute");
     Mute.active = true;
+    this.GlobalAudio.mute();
   }
   phonation() {
     const Phonation = cc.find("Canvas/UI/PauseOptions/Phonation");
     Phonation.active = true;
     const Mute = cc.find("Canvas/UI/PauseOptions/Mute");
     Mute.active = false;
+    this.GlobalAudio.phonation();
   }
 }

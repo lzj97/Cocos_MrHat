@@ -15,6 +15,9 @@
     "_children": [
       {
         "__id__": 2
+      },
+      {
+        "__id__": 37
       }
     ],
     "_active": true,
@@ -413,9 +416,7 @@
     "root": {
       "__id__": 5
     },
-    "asset": {
-      "__uuid__": "a99ef075-eb44-4a26-823f-a204eb0a7e6c"
-    },
+    "asset": null,
     "fileId": "24RZf/0upBcpj0H7jRKMxC",
     "sync": false
   },
@@ -520,9 +521,7 @@
     "root": {
       "__id__": 5
     },
-    "asset": {
-      "__uuid__": "a99ef075-eb44-4a26-823f-a204eb0a7e6c"
-    },
+    "asset": null,
     "fileId": "bdXiDLxP5DY6WEcJuEqA+N",
     "sync": false
   },
@@ -531,9 +530,7 @@
     "root": {
       "__id__": 5
     },
-    "asset": {
-      "__uuid__": "a99ef075-eb44-4a26-823f-a204eb0a7e6c"
-    },
+    "asset": null,
     "fileId": "",
     "sync": false
   },
@@ -1632,5 +1629,85 @@
     "_originalWidth": 0,
     "_originalHeight": 0,
     "_id": "29zXboiXFBKoIV4PQ2liTe"
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "GlobalAudio",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 1
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 38
+      }
+    ],
+    "_prefab": null,
+    "_opacity": 255,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 0,
+      "height": 0
+    },
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0.5,
+      "y": 0.5
+    },
+    "_trs": {
+      "__type__": "TypedArray",
+      "ctor": "Float64Array",
+      "array": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "_eulerAngles": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_skewX": 0,
+    "_skewY": 0,
+    "_is3DNode": false,
+    "_groupIndex": 0,
+    "groupIndex": 0,
+    "_id": "7clWJOXfNCIrhVtDDUDOdG"
+  },
+  {
+    "__type__": "62281cKQAxLlZONoo60eQCW",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 37
+    },
+    "_enabled": true,
+    "Mute": false,
+    "Volume": 2,
+    "JumpAudio": {
+      "__uuid__": "69514c6f-a03d-44d2-81f7-9387287a3ff7"
+    },
+    "BackgroundAudio": {
+      "__uuid__": "9269c463-9ee6-4bf0-9ec2-2945e5c96d0e"
+    },
+    "_id": "97KXFDrZ9ETqOhOx3hAIXa"
   }
 ]
