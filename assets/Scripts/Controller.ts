@@ -35,10 +35,12 @@ export default class NewClass extends cc.Component {
     const Left = this.node.getChildByName("Left");
     Left.on(cc.Node.EventType.TOUCH_START, () => (this.leftLongPress = true), this);
     Left.on(cc.Node.EventType.TOUCH_END, () => (this.leftLongPress = false), this);
+    Left.on(cc.Node.EventType.TOUCH_CANCEL, () => (this.leftLongPress = false), this);
 
     const Right = this.node.getChildByName("Right");
     Right.on(cc.Node.EventType.TOUCH_START, () => (this.rightLongPress = true), this);
     Right.on(cc.Node.EventType.TOUCH_END, () => (this.rightLongPress = false), this);
+    Right.on(cc.Node.EventType.TOUCH_CANCEL, () => (this.rightLongPress = false), this);
 
     const Jump = this.node.getChildByName("Jump");
     Jump.on(cc.Node.EventType.TOUCH_START, this.jumpAction, this);
