@@ -1,5 +1,6 @@
 const { ccclass, property } = cc._decorator;
 import GlobalAudio from "./GlobalAudio";
+import global from "./utils/global";
 
 @ccclass
 export default class NewClass extends cc.Component {
@@ -26,6 +27,7 @@ export default class NewClass extends cc.Component {
   loadNextScene() {
     const sceneName = cc.director.getScene().name;
     const index = sceneName.replace("Level", "");
+    cc.sys.localStorage.setItem(global.PASSED_COUNT, index);
     cc.director.loadScene(`Level${Number(index) + 1}`);
   }
   reloadScene() {

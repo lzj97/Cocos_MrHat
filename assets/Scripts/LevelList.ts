@@ -1,4 +1,5 @@
 const { ccclass, property } = cc._decorator;
+import global from "./utils/global";
 
 @ccclass
 export default class NewClass extends cc.Component {
@@ -18,7 +19,7 @@ export default class NewClass extends cc.Component {
   rowCount: number = 2;
   columnCount: number = 5;
 
-  passedCound: number = 0;
+  passedCount: number = 0;
 
   protected onLoad(): void {
     this.ListBox = this.node.getChildByName("ListBox");
@@ -30,6 +31,8 @@ export default class NewClass extends cc.Component {
     Next.on(cc.Node.EventType.TOUCH_END, () => this.changePage(this.page + 1), this);
 
     this.node.getChildByName("Home").on(cc.Node.EventType.TOUCH_END, this.goMain, this);
+
+    this.passedCount = JSON.parse(cc.sys.localStorage.getItem(global.PASSED_COUNT)) || 0;
   }
 
   start() {
@@ -50,7 +53,7 @@ export default class NewClass extends cc.Component {
 
       const Text = sign.getChildByName("Text");
 
-      if (this.passedCound + 1 < text) {
+      if (this.passedCount + 1 < text) {
         Text.active = false;
         sign.getChildByName("Lock").active = true;
       } else {
