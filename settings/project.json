@@ -3,7 +3,9 @@
     "default",
     "UI",
     "Player",
-    "Hidden"
+    "Hidden",
+    "Pass",
+    "GameOver"
   ],
   "collision-matrix": [
     [
@@ -21,13 +23,30 @@
       true,
       false,
       false,
-      false
+      false,
+      true,
+      true
     ],
     [
       false,
       false,
       false,
-      true
+      false
+    ],
+    [
+      false,
+      false,
+      true,
+      false,
+      false
+    ],
+    [
+      false,
+      false,
+      true,
+      false,
+      false,
+      false
     ]
   ],
   "excluded-modules": [
