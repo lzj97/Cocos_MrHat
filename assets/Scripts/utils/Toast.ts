@@ -16,6 +16,8 @@ function Toast(
 
   let bgNode = new cc.Node();
 
+  bgNode.group = "UI";
+
   // Lable文本格式设置
   let textNode = new cc.Node();
   let textLabel = textNode.addComponent(cc.Label);

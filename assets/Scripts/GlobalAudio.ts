@@ -25,7 +25,7 @@ export default class NewClass extends cc.Component {
     cc.game.addPersistRootNode(this.node);
     this.playBackgroundMusic();
 
-    if (JSON.parse(cc.sys.localStorage.getItem(global.MUTE))) {
+    if (JSON.parse(cc.sys.localStorage.getItem(global.MUTE) || null)) {
       this.mute();
     }
   }
