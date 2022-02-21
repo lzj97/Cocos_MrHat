@@ -1,9 +1,15 @@
 const { ccclass, property } = cc._decorator;
+import GlobalAudio from "./GlobalAudio";
 
 @ccclass
 export default class NewClass extends cc.Component {
-  // onLoad () {}
-
+  GlobalAudio: GlobalAudio = null;
+  onLoad() {
+    this.GlobalAudio = cc.director
+      .getScene()
+      .getChildByName("GlobalAudio")
+      .getComponent("GlobalAudio");
+  }
   start() {}
 
   // update (dt) {}
@@ -12,12 +18,24 @@ export default class NewClass extends cc.Component {
     if (otherCollider.node?.group === "Pass") {
       this.loadNextScene();
     } else if (otherCollider.node?.group === "GameOver") {
-      cc.director.loadScene("Level1");
+      this.reloadScene();
+    } else if (otherCollider.node?.group === "Key") {
+      this.onPickKey(otherCollider);
     }
   }
   loadNextScene() {
     const sceneName = cc.director.getScene().name;
     const index = sceneName.replace("Level", "");
     cc.director.loadScene(`Level${Number(index) + 1}`);
+  }
+  reloadScene() {
+    cc.director.loadScene(cc.director.getScene().name);
+  }
+  onPickKey(key) {
+    key.node.destroy();
+    const Door = cc.find("Canvas/Door");
+    if (Door) {
+      Door.destroy();
+    }
   }
 }
