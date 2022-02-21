@@ -4913,7 +4913,7 @@
       "__id__": 127
     },
     "_enabled": true,
-    "_cullingMask": -62,
+    "_cullingMask": -126,
     "_clearFlags": 6,
     "_backgroundColor": {
       "__type__": "cc.Color",

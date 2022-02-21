@@ -5,7 +5,8 @@
     "Player",
     "Hidden",
     "Pass",
-    "GameOver"
+    "GameOver",
+    "Key"
   ],
   "collision-matrix": [
     [
@@ -25,6 +26,7 @@
       false,
       false,
       true,
+      true,
       true
     ],
     [
@@ -44,6 +46,15 @@
       false,
       false,
       true,
+      false,
+      false,
+      false
+    ],
+    [
+      false,
+      false,
+      true,
+      false,
       false,
       false,
       false
