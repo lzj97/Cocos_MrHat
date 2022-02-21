@@ -32,7 +32,7 @@ export default class NewClass extends cc.Component {
 
     this.node.getChildByName("Home").on(cc.Node.EventType.TOUCH_END, this.goMain, this);
 
-    this.passedCount = JSON.parse(cc.sys.localStorage.getItem(global.PASSED_COUNT)) || 0;
+    this.passedCount = JSON.parse(cc.sys.localStorage.getItem(global.PASSED_COUNT) || 0);
   }
 
   start() {
