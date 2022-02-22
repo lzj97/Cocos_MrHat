@@ -1,5 +1,5 @@
 import global from "./utils/global";
-import GlobalAudio from "./GlobalAudio";
+import GlobalStore from "./GlobalStore";
 import Toast from "./utils/Toast";
 
 const { ccclass, property } = cc._decorator;
@@ -15,7 +15,7 @@ export default class NewClass extends cc.Component {
   ContinuousJump: boolean = true;
 
   Player: cc.Node = null;
-  GlobalAudio: GlobalAudio = null;
+  GlobalStore: GlobalStore = null;
 
   leftLongPress: boolean = false;
   rightLongPress: boolean = false;
@@ -24,10 +24,10 @@ export default class NewClass extends cc.Component {
   onLoad() {
     this.Player = cc.find("Canvas/Player");
 
-    this.GlobalAudio = cc.director
+    this.GlobalStore = cc.director
       .getScene()
-      .getChildByName("GlobalAudio")
-      .getComponent("GlobalAudio");
+      .getChildByName("GlobalStore")
+      .getComponent("GlobalStore");
 
     if (JSON.parse(cc.sys.localStorage.getItem(global.MUTE) || null)) {
       this.mute();
@@ -92,7 +92,7 @@ export default class NewClass extends cc.Component {
     }
     v.y = this.jumpSpeed;
     this.rigidbody.linearVelocity = v;
-    this.GlobalAudio.playPlayerJumpEffect();
+    this.GlobalStore.playPlayerJumpEffect();
   }
 
   reload() {
@@ -115,14 +115,14 @@ export default class NewClass extends cc.Component {
     Phonation.active = false;
     const Mute = cc.find("Canvas/Controller/PauseDialog/Mute");
     Mute.active = true;
-    this.GlobalAudio.mute();
+    this.GlobalStore.mute();
   }
   phonation() {
     const Phonation = cc.find("Canvas/Controller/PauseDialog/Phonation");
     Phonation.active = true;
     const Mute = cc.find("Canvas/Controller/PauseDialog/Mute");
     Mute.active = false;
-    this.GlobalAudio.phonation();
+    this.GlobalStore.phonation();
   }
   help() {
     const TipsDialog = this.node.getChildByName("TipsDialog");

@@ -1419,7 +1419,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "GlobalAudio",
+    "_name": "GlobalStore",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1

@@ -1,15 +1,15 @@
 const { ccclass, property } = cc._decorator;
-import GlobalAudio from "./GlobalAudio";
+import GlobalStore from "./GlobalStore";
 import global from "./utils/global";
 
 @ccclass
 export default class NewClass extends cc.Component {
-  GlobalAudio: GlobalAudio = null;
+  GlobalStore: GlobalStore = null;
   onLoad() {
-    this.GlobalAudio = cc.director
+    this.GlobalStore = cc.director
       .getScene()
-      .getChildByName("GlobalAudio")
-      .getComponent("GlobalAudio");
+      .getChildByName("GlobalStore")
+      .getComponent("GlobalStore");
   }
   start() {}
 
