@@ -26,9 +26,11 @@ export default class NewClass extends cc.Component {
   }
   loadNextScene() {
     const sceneName = cc.director.getScene().name;
-    const index = sceneName.replace("Level", "");
-    cc.sys.localStorage.setItem(global.PASSED_COUNT, index);
-    cc.director.loadScene(`Level${Number(index) + 1}`);
+    const index = Number(sceneName.replace("Level", ""));
+    if (Number(cc.sys.localStorage.getItem(global.PASSED_COUNT) || 0) < index) {
+      cc.sys.localStorage.setItem(global.PASSED_COUNT, index);
+    }
+    cc.director.loadScene(`Level${index + 1}`);
   }
   reloadScene() {
     cc.director.loadScene(cc.director.getScene().name);
