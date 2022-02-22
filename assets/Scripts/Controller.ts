@@ -46,8 +46,8 @@ export default class NewClass extends cc.Component {
     const Jump = this.node.getChildByName("Jump");
     Jump.on(cc.Node.EventType.TOUCH_START, this.jumpAction, this);
 
-    // cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.onKeyDown, this);
-    // cc.systemEvent.on(cc.SystemEvent.EventType.KEY_UP, this.onKeyUp, this);
+    cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.onKeyDown, this);
+    cc.systemEvent.on(cc.SystemEvent.EventType.KEY_UP, this.onKeyUp, this);
   }
   onKeyDown(event) {
     if (event.keyCode === 65) {
