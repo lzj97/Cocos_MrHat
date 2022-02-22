@@ -1,6 +1,6 @@
 import global from "./utils/global";
 import GlobalStore from "./GlobalStore";
-import Toast from "./utils/Toast";
+import { loadNextScene, reloadScene, pauseGame } from "./utils/common";
 
 const { ccclass, property } = cc._decorator;
 @ccclass
@@ -96,13 +96,12 @@ export default class NewClass extends cc.Component {
   }
 
   reload() {
-    const sceneName = cc.director.getScene()?.name;
-    cc.director.loadScene(sceneName);
+    reloadScene();
   }
   pause() {
     const PauseDialog = this.node.getChildByName("PauseDialog");
     PauseDialog.active = true;
-    this.GlobalStore.pauseGame(true);
+    pauseGame(true);
   }
   goMain() {
     cc.director.loadScene("Main");
@@ -110,7 +109,7 @@ export default class NewClass extends cc.Component {
   play() {
     const PauseDialog = this.node.getChildByName("PauseDialog");
     PauseDialog.active = false;
-    this.GlobalStore.pauseGame(false);
+    pauseGame(false);
   }
   mute() {
     const Phonation = cc.find("Canvas/Controller/PauseDialog/Phonation");
@@ -135,6 +134,19 @@ export default class NewClass extends cc.Component {
     TipsDialog.active = false;
   }
   playAdv() {
-    Toast("该功能暂未完成");
+    const DialogContent = cc.find("Canvas/Controller/TipsDialog/DialogContent");
+    const TipsContent = cc.find("Canvas/Controller/TipsDialog/TipsContent");
+    const Label = TipsContent.getComponentInChildren(cc.Label);
+
+    const sceneName = cc.director.getScene()?.name;
+    const index = sceneName.replace("Level", "");
+
+    Label.string = global.tips[Number(index) - 1];
+
+    DialogContent.active = false;
+    TipsContent.active = true;
+  }
+  loadNextScene() {
+    loadNextScene();
   }
 }
