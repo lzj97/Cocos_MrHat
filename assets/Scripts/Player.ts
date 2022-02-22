@@ -1,16 +1,9 @@
 const { ccclass, property } = cc._decorator;
-import GlobalStore from "./GlobalStore";
-import global from "./utils/global";
+import { loadNextScene, reloadScene } from "./utils/common";
 
 @ccclass
 export default class NewClass extends cc.Component {
-  GlobalStore: GlobalStore = null;
-  onLoad() {
-    this.GlobalStore = cc.director
-      .getScene()
-      .getChildByName("GlobalStore")
-      .getComponent("GlobalStore");
-  }
+  onLoad() {}
   start() {}
 
   // update (dt) {}
@@ -25,17 +18,10 @@ export default class NewClass extends cc.Component {
     }
   }
   loadNextScene() {
-    const sceneName = cc.director.getScene().name;
-    const index = Number(sceneName.replace("Level", ""));
-    if (Number(cc.sys.localStorage.getItem(global.PASSED_COUNT) || 0) < index) {
-      cc.sys.localStorage.setItem(global.PASSED_COUNT, index);
-    }
-    cc.director.loadScene(`Level${index + 1}`);
-    this.GlobalStore.pauseGame(false);
+    loadNextScene();
   }
   reloadScene() {
-    cc.director.loadScene(cc.director.getScene().name);
-    this.GlobalStore.pauseGame(false);
+    reloadScene();
   }
   onPickKey(key) {
     key.node.destroy();
