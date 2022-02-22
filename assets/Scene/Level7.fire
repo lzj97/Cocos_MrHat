@@ -4014,7 +4014,7 @@
       "ctor": "Float64Array",
       "array": [
         -296.2,
-        -306.722,
+        -243.7,
         0,
         0,
         0,
@@ -4078,7 +4078,7 @@
       "__id__": 110
     },
     "_enabled": true,
-    "_type": 0,
+    "_type": 1,
     "_allowSleep": true,
     "_gravityScale": 1,
     "_linearDamping": 0,
@@ -4091,7 +4091,7 @@
     "_angularVelocity": 0,
     "_fixedRotation": false,
     "enabledContactListener": false,
-    "bullet": false,
+    "bullet": true,
     "awakeOnLoad": true,
     "_id": "5b97Srz/9FQ63xUj59GgR+"
   },

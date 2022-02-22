@@ -10,7 +10,7 @@
   ],
   "collision-matrix": [
     [
-      false,
+      true,
       null,
       true,
       null,
@@ -90,6 +90,6 @@
       "enable": false
     }
   },
-  "start-scene": "f9d00380-3eb3-4b08-ab8d-b971ce56a25f",
-  "last-module-event-record-time": 1645440113635
+  "last-module-event-record-time": 1645440113635,
+  "start-scene": "current"
 }
