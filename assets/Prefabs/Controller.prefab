@@ -13,7 +13,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "UI",
+    "_name": "Controller",
     "_objFlags": 0,
     "_parent": null,
     "_children": [
@@ -79,8 +79,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        0,
-        0,
+        480,
+        320,
         0,
         0,
         0,

@@ -414,7 +414,7 @@
     "_prefab": {
       "__id__": 13
     },
-    "_name": "UI",
+    "_name": "Controller",
     "_active": true,
     "_trs": {
       "__type__": "TypedArray",

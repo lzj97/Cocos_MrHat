@@ -111,16 +111,16 @@ export default class NewClass extends cc.Component {
     PauseDialog.active = false;
   }
   mute() {
-    const Phonation = cc.find("Canvas/UI/PauseDialog/Phonation");
+    const Phonation = cc.find("Canvas/Controller/PauseDialog/Phonation");
     Phonation.active = false;
-    const Mute = cc.find("Canvas/UI/PauseDialog/Mute");
+    const Mute = cc.find("Canvas/Controller/PauseDialog/Mute");
     Mute.active = true;
     this.GlobalAudio.mute();
   }
   phonation() {
-    const Phonation = cc.find("Canvas/UI/PauseDialog/Phonation");
+    const Phonation = cc.find("Canvas/Controller/PauseDialog/Phonation");
     Phonation.active = true;
-    const Mute = cc.find("Canvas/UI/PauseDialog/Mute");
+    const Mute = cc.find("Canvas/Controller/PauseDialog/Mute");
     Mute.active = false;
     this.GlobalAudio.phonation();
   }
