@@ -102,6 +102,7 @@ export default class NewClass extends cc.Component {
   pause() {
     const PauseDialog = this.node.getChildByName("PauseDialog");
     PauseDialog.active = true;
+    this.GlobalStore.pauseGame(true);
   }
   goMain() {
     cc.director.loadScene("Main");
@@ -109,6 +110,7 @@ export default class NewClass extends cc.Component {
   play() {
     const PauseDialog = this.node.getChildByName("PauseDialog");
     PauseDialog.active = false;
+    this.GlobalStore.pauseGame(false);
   }
   mute() {
     const Phonation = cc.find("Canvas/Controller/PauseDialog/Phonation");

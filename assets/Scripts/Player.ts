@@ -31,9 +31,11 @@ export default class NewClass extends cc.Component {
       cc.sys.localStorage.setItem(global.PASSED_COUNT, index);
     }
     cc.director.loadScene(`Level${index + 1}`);
+    this.GlobalStore.pauseGame(false);
   }
   reloadScene() {
     cc.director.loadScene(cc.director.getScene().name);
+    this.GlobalStore.pauseGame(false);
   }
   onPickKey(key) {
     key.node.destroy();

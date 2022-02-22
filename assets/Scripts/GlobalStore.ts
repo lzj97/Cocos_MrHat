@@ -21,6 +21,8 @@ export default class NewClass extends cc.Component {
   @property(cc.AudioClip)
   BackgroundAudio: cc.AudioClip = null;
 
+  paused: boolean = false;
+
   onLoad() {
     cc.game.addPersistRootNode(this.node);
     this.playBackgroundMusic();
@@ -49,5 +51,8 @@ export default class NewClass extends cc.Component {
   }
   playPlayerJumpEffect() {
     this.play(this.JumpAudio);
+  }
+  pauseGame(p: boolean) {
+    this.paused = p;
   }
 }
