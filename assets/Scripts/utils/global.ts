@@ -1,7 +1,7 @@
 export default {
   MUTE: "MUTE",
   PASSED_COUNT: "PASSED_COUNT",
-  levelCount: 8,
+  levelCount: 9,
   tips: [
     "连续点击多次跳跃按钮跳过去",
     "这都过不了，应该是出BUG了",
@@ -11,5 +11,6 @@ export default {
     "暂停时仍然可以移动",
     "底部的砖块可以拖动",
     "请走到最左边",
+    "触碰“钥匙”两字即可开门",
   ],
 };
