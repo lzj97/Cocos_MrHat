@@ -1,6 +1,7 @@
 export default {
   MUTE: "MUTE",
   PASSED_COUNT: "PASSED_COUNT",
+  levelCount: 7,
   tips: [
     "连续点击多次跳跃按钮跳过去",
     "这都过不了，应该是出BUG了",

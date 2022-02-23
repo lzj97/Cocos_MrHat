@@ -7,17 +7,12 @@ export default class NewClass extends cc.Component {
   SignPrefab: cc.Prefab = null;
 
   @property(cc.Integer)
-  count: number = 22;
-
-  @property(cc.Integer)
-  page: number = 2;
+  page: number = 1;
 
   ListBox: cc.Node = null;
   Pagination: cc.Node = null;
 
   pageSize: number = 10;
-  rowCount: number = 2;
-  columnCount: number = 5;
 
   passedCount: number = 0;
 
@@ -41,13 +36,13 @@ export default class NewClass extends cc.Component {
 
   renderList() {
     const indexArr: number[] = [];
-    for (let i = 1; i <= this.count; i++) {
+    for (let i = 1; i <= global.levelCount; i++) {
       if (i > (this.page - 1) * this.pageSize && i <= this.page * this.pageSize) {
         indexArr.push(i);
       }
     }
 
-    indexArr.forEach((text: number, index: number) => {
+    indexArr.forEach((text: number) => {
       const sign = cc.instantiate(this.SignPrefab);
       sign.parent = this.ListBox;
 
@@ -59,13 +54,6 @@ export default class NewClass extends cc.Component {
       } else {
         Text.getComponent(cc.Label).string = String(text);
       }
-      const intervalX = (this.ListBox.width - this.columnCount * sign.width) / 4;
-      const intervalY = this.ListBox.height - this.rowCount * sign.height;
-
-      const x = (index % this.columnCount) * (intervalX + sign.width) + sign.width / 2;
-      const y = -Math.floor(index / this.columnCount) * (intervalY + sign.height) - sign.height / 2;
-
-      sign.setPosition(x, y);
     });
 
     const FirstNumber = this.Pagination.getChildByName("FirstNumber");
@@ -75,7 +63,7 @@ export default class NewClass extends cc.Component {
   }
 
   changePage(p: number) {
-    if (p < 1 || p > Math.ceil(this.count / this.pageSize)) return;
+    if (p < 1 || p > Math.ceil(global.levelCount / this.pageSize)) return;
     const children = this.ListBox.children;
     children.forEach((node) => {
       node.destroy();
