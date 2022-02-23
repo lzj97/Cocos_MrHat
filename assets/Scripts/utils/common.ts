@@ -23,6 +23,10 @@ export function loadNextScene() {
   if (Number(cc.sys.localStorage.getItem(global.PASSED_COUNT) || 0) < index) {
     cc.sys.localStorage.setItem(global.PASSED_COUNT, index);
   }
-  cc.director.loadScene(`Level${index + 1}`);
   pauseGame(false);
+  if (index < global.levelCount) {
+    cc.director.loadScene(`Level${index + 1}`);
+  } else {
+    cc.director.loadScene(`LastLevel`);
+  }
 }
