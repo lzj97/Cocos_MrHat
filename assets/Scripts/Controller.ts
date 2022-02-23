@@ -140,8 +140,11 @@ export default class NewClass extends cc.Component {
 
     const sceneName = cc.director.getScene()?.name;
     const index = sceneName.replace("Level", "");
-
-    Label.string = global.tips[Number(index) - 1];
+    if (index === "Last") {
+      Label.string = "广告看上瘾了？";
+    } else {
+      Label.string = global.tips[Number(index) - 1];
+    }
 
     DialogContent.active = false;
     TipsContent.active = true;
