@@ -614,8 +614,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 127,
-      "height": 44
+      "width": 250,
+      "height": 80
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -633,8 +633,8 @@
         0,
         0,
         1,
-        2,
-        2,
+        1,
+        1,
         1
       ]
     },
@@ -679,8 +679,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 127,
-      "height": 44
+      "width": 250,
+      "height": 80
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -800,7 +800,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 100,
+      "width": 200,
       "height": 40
     },
     "_anchorPoint": {
@@ -854,7 +854,7 @@
     "_dstBlendFactor": 771,
     "_string": "开始游戏",
     "_N$string": "开始游戏",
-    "_fontSize": 16,
+    "_fontSize": 38,
     "_lineHeight": 40,
     "_enableWrapText": false,
     "_N$file": null,
@@ -866,7 +866,7 @@
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
     "_N$fontFamily": "Arial",
-    "_N$overflow": 1,
+    "_N$overflow": 2,
     "_N$cacheMode": 1,
     "_id": "efl7f03RFDPoPyy26jTd1a"
   },
@@ -1115,8 +1115,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "帽子先生历险记",
-    "_N$string": "帽子先生历险记",
+    "_string": "帽子先生梦游记",
+    "_N$string": "帽子先生梦游记",
     "_fontSize": 40,
     "_lineHeight": 40,
     "_enableWrapText": true,
