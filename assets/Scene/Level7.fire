@@ -125,8 +125,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 960,
-      "height": 640
+      "width": 1080,
+      "height": 720
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -137,8 +137,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        480,
-        320,
+        540,
+        360,
         0,
         0,
         0,
@@ -1612,7 +1612,7 @@
       "ctor": "Float64Array",
       "array": [
         146,
-        -228.149,
+        -243.705,
         0,
         0,
         0,
@@ -1763,7 +1763,7 @@
       "ctor": "Float64Array",
       "array": [
         146,
-        -305.975,
+        -321.531,
         0,
         0,
         0,
@@ -1914,7 +1914,7 @@
       "ctor": "Float64Array",
       "array": [
         137.75,
-        281.017,
+        320.104,
         0,
         0,
         0,
@@ -2065,7 +2065,7 @@
       "ctor": "Float64Array",
       "array": [
         633.981,
-        218.04,
+        204.677,
         0,
         0,
         0,
@@ -2216,7 +2216,7 @@
       "ctor": "Float64Array",
       "array": [
         -535.601,
-        0,
+        -15.556,
         0,
         0,
         0,
@@ -2737,7 +2737,7 @@
       "ctor": "Float64Array",
       "array": [
         -56.73,
-        0,
+        -15.556,
         0,
         0,
         0,
@@ -3230,7 +3230,7 @@
       "ctor": "Float64Array",
       "array": [
         -460.12,
-        89.591,
+        74.806,
         0,
         0,
         0,
@@ -3940,7 +3940,7 @@
       "ctor": "Float64Array",
       "array": [
         633.209,
-        -110.878,
+        -124.241,
         0,
         0,
         0,
@@ -4014,7 +4014,7 @@
       "ctor": "Float64Array",
       "array": [
         -296.2,
-        -306.705,
+        -322.261,
         0,
         0,
         0,
@@ -4131,8 +4131,8 @@
     "_enabled": true,
     "_designResolution": {
       "__type__": "cc.Size",
-      "width": 960,
-      "height": 640
+      "width": 1080,
+      "height": 720
     },
     "_fitWidth": false,
     "_fitHeight": true,
